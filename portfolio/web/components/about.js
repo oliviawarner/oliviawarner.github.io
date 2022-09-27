@@ -16,8 +16,7 @@ class About extends HTMLElement {
 
                 <!--Socials-->
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2" id="resume_download">Resume</button>
                 </div>
                 <i class="fa-brands fa-github"></i>
                 <i class="fa-brands fa-linkedin"></i>
