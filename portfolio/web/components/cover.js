@@ -4,12 +4,7 @@ class Cover extends HTMLElement {
     }
         connectedCallback() {
             this.innerHTML = `
-                <div class="container-fluid" style="height:100vh">
-                    <div class="title-content">
-                        <h1>Olivia</h1>
-                        <h1>Olivia</h1>
-                    </div>
-                </div>
+            <h1>Cover<h1>
             `;
     }
 }

@@ -4,4 +4,6 @@
 
 #profile {
     text-align:center;
+    position:relative;
+    border-radius: 50%;
 }
