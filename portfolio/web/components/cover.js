@@ -4,7 +4,6 @@ class Cover extends HTMLElement {
     }
         connectedCallback() {
             this.innerHTML = `
-            <h1>Cover<h1>
             `;
     }
 }
