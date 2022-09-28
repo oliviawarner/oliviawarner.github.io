@@ -11,7 +11,7 @@ class About extends HTMLElement {
               <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_czci5s6k.json"  background="transparent"  speed="1"  style="width: 775px; height: 775px; margin-top:-650px; margin-left:-125px; z-index:-1;"  loop  autoplay></lottie-player>
               </div>
               <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">About Me</h1>
+                <h1 class="display-5 fw-bold lh-1 mb-3">Hello World,</h1>
                 <p class="lead">I am a developer and designer from Pittsburgh, Pennsylvania.</p>
 
                 <!--Socials-->
