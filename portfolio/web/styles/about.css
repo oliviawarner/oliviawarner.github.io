@@ -12,13 +12,3 @@
     background-color: #587B7F !important;
 }
 
-svg {
-    height:30px;
-    width:30px;
-    fill: #D3D0CB;
-}
-
-svg:hover {
-    fill:#393E41;
-    cursor: pointer;
-}
