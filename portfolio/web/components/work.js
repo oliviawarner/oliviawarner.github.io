@@ -5,7 +5,7 @@ class Work extends HTMLElement {
         connectedCallback() {
             this.innerHTML = `
         <div class="px-4 my-5 text-center">
-            <lottie-player src="https://lottie.host/ca72e53f-59b9-444c-a3f2-ccef1184185a/clXp4Arl3P.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>
+            <!--<lottie-player src="https://lottie.host/ca72e53f-59b9-444c-a3f2-ccef1184185a/clXp4Arl3P.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>-->
             <h1 class="display-4 fw-bold">Work</h1>
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
@@ -15,8 +15,7 @@ class Work extends HTMLElement {
 
         <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 256C0 209.4 12.47 165.6 34.27 127.1L144.1 318.3C166 357.5 207.9 384 256 384C270.3 384 283.1 381.7 296.8 377.4L220.5 509.6C95.9 492.3 0 385.3 0 256zM365.1 321.6C377.4 302.4 384 279.1 384 256C384 217.8 367.2 183.5 340.7 160H493.4C505.4 189.6 512 222.1 512 256C512 397.4 397.4 511.1 256 512L365.1 321.6zM477.8 128H256C193.1 128 142.3 172.1 130.5 230.7L54.19 98.47C101 38.53 174 0 256 0C350.8 0 433.5 51.48 477.8 128V128zM168 256C168 207.4 207.4 168 256 168C304.6 168 344 207.4 344 256C344 304.6 304.6 344 256 344C207.4 344 168 304.6 168 256z"/></svg>
-        </div>
+      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_c7mbzzus.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>        </div>
         <h3 class="fs-2">Intense Tennis Camps</h3>
         <p>This website was developed from scratch using HTML, CSS, Javascript, JQuery & Bootstrap.</p>       
         <div class="icon-link d-inline-flex align-items-center gap-2">
@@ -28,9 +27,8 @@ class Work extends HTMLElement {
 
         <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M420.55,301.93a24,24,0,1,1,24-24,24,24,0,0,1-24,24m-265.1,0a24,24,0,1,1,24-24,24,24,0,0,1-24,24m273.7-144.48,47.94-83a10,10,0,1,0-17.27-10h0l-48.54,84.07a301.25,301.25,0,0,0-246.56,0L116.18,64.45a10,10,0,1,0-17.27,10h0l47.94,83C64.53,202.22,8.24,285.55,0,384H576c-8.24-98.45-64.54-181.78-146.85-226.55"/></svg>
-        </div>
-        <h3 class="fs-2">Android Task Manager</h3>
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_mCoRxU.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>        </div>
+        <h3 class="fs-2">Task Manager</h3>
         <p>This Android application gathers rooted operating system info. It focuses on the details, services & CPU utilization. Linux commands were executed in Java to gather the info.</p>
         <div class="icon-link d-inline-flex align-items-center gap -2">
             <!--Github-->
@@ -40,7 +38,8 @@ class Work extends HTMLElement {
 
         <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_bz1uh69q.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>
         </div>
         <h3 class="fs-2">Twitter Topic Modeling</h3>
         <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
