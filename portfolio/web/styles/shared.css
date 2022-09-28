@@ -11,3 +11,11 @@ svg:hover {
     fill:#393E41;
     cursor: pointer;
 }
+
+#anime {
+    padding-left:200px;
+}
+
+lottie-player {
+    margin:0 auto;
+}
