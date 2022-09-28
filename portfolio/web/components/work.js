@@ -15,8 +15,9 @@ class Work extends HTMLElement {
 
         <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_c7mbzzus.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>        </div>
-        <h3 class="fs-2">Intense Tennis Camps</h3>
+        <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_ppluk1ob.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>       
+        </div> 
+      <h3 class="fs-2">Intense Tennis Camps</h3>
         <p>This website was developed from scratch using HTML, CSS, Javascript, JQuery & Bootstrap.</p>       
         <div class="icon-link d-inline-flex align-items-center gap-2">
             <!--Github-->
