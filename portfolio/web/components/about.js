@@ -8,7 +8,7 @@ class About extends HTMLElement {
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div class="col-10 col-sm-8 col-lg-6">
               <img src="../imgs/profile_square.jpg" alt="Olivia Warner Profile" width="500" height="500" id="profile" style="z-index:1;">
-              <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_czci5s6k.json"  background="transparent"  speed="1"  style="width: 775px; height: 775px; margin-top:-670px; margin-left:-90px; z-index:-1;"  loop  autoplay></lottie-player>
+              <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_czci5s6k.json"  background="transparent"  speed="1"  style="width: 775px; height: 775px; margin-top:-650px; margin-left:-125px; z-index:-1;"  loop  autoplay></lottie-player>
               </div>
               <div class="col-lg-6">
                 <h1 class="display-5 fw-bold lh-1 mb-3">About Me</h1>
