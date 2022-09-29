@@ -4,7 +4,7 @@ class Contact extends HTMLElement {
     }
         connectedCallback() {
             this.innerHTML = `
-            <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="container col-xl-10 col-xxl-8 px-4 py-5 vh-100" id="contact">
             <div class="row align-items-center g-lg-5 py-5">
                 <h1 class="display-4 fw-bold lh-1 mb-3" style="text-align:center">Contact Me</h1>
               <div class="col-lg-7 mx-auto col-lg-7">
