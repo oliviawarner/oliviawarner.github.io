@@ -52,6 +52,7 @@ class Work extends HTMLElement {
     </div>
   </div>
 </div>
+<div class="b-example-divider"></div>
             `;
     }
 }
