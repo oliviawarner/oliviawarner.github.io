@@ -4,7 +4,7 @@ class Contact extends HTMLElement {
     }
         connectedCallback() {
             this.innerHTML = `
-            <div class="container col-xl-10 col-xxl-8 px-4 py-5 vh-100" id="contact">
+            <div class="container col-xl-10 col-xxl-8 vh-100" id="contact">
             <div class="row align-items-center g-lg-5 py-5">
                 <h1 class="display-4 fw-bold lh-1 mb-3" style="text-align:center">Contact Me</h1>
               <div class="col-lg-7 mx-auto col-lg-7">
@@ -18,7 +18,7 @@ class Contact extends HTMLElement {
                     <label for="floatingEmail">Email Address</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <textarea class="form-control" id="floatingMessage" rows="6" placeholder="Message" style="height:100%"></textarea>
+                    <textarea class="form-control" id="floatingMessage" rows="4" placeholder="Message" style="height:100%"></textarea>
                     <label for="floatingMessage">Message</label>
                   </div>
                   <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
