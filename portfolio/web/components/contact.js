@@ -21,7 +21,7 @@ class Contact extends HTMLElement {
                     <textarea class="form-control" id="floatingMessage" rows="4" placeholder="Message" style="height:100%"></textarea>
                     <label for="floatingMessage">Message</label>
                   </div>
-                  <button class="w-100 btn btn-lg btn-primary" type="submit">Send Message</button>
+                  <button class="w-100 btn btn-lg btn-warning" type="submit" id="send_message_btn">Send Message</button>
                   <hr class="my-4">
                   <small class="text-muted">By clicking Send Message, a message will be sent to me directly</small>
                 </form>
