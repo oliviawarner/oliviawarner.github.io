@@ -12,9 +12,9 @@ class Nav extends HTMLElement {
               </a>
         
               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#about" class="nav-link px-2 link-dark">About</a></li>
-                <li><a href="#work" class="nav-link px-2 link-dark">Work</a></li>
-                <li><a href="#contact" class="nav-link px-2 link-dark">Contact</a></li>
+                <li><a href="#about" class="nav-link px-2 link-dark rounded" id="nav_about">About</a></li>
+                <li><a href="#work" class="nav-link px-2 link-dark rounded" id="nav_work">Work</a></li>
+                <li><a href="#contact" class="nav-link px-2 link-dark rounded" id="nav_contact">Contact</a></li>
               </ul>
         
               <div class="col-md-3 text-end">
@@ -33,5 +33,5 @@ $(document).ready(function() {
   $('#nav_blog_btn').click(function () {
     window.open('https://oliviawarner.hashnode.dev/', '_blank');
   });
-
+  
 });
