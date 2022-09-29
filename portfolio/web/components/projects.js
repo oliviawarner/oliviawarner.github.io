@@ -4,9 +4,9 @@ class Work extends HTMLElement {
     }
         connectedCallback() {
             this.innerHTML = `
-        <div class="px-4 my-5 text-center vh-100" id="work">
+        <div class="px-4 my-5 text-center vh-100" id="projects">
             <!--<lottie-player src="https://lottie.host/ca72e53f-59b9-444c-a3f2-ccef1184185a/clXp4Arl3P.json" background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay></lottie-player>-->
-            <h1 class="display-4 fw-bold pt-4">Work</h1>
+            <h1 class="display-4 fw-bold pt-4">Some mentionable projects...</h1>
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
             </div>
