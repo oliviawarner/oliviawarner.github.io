@@ -1,0 +1,17 @@
+/* #about-header {
+    text-align: center;
+} */
+
+#profile {
+    text-align:center;
+    position:relative;
+    border-radius: 50%;
+}
+
+#resume_download:hover {
+    background-color: #587B7F !important;
+}
+
+#arrow_down {
+    cursor: pointer;
+}

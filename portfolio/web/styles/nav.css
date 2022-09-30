@@ -1,0 +1,8 @@
+#nav_blog_btn {
+    background-color: #587B7F !important;
+    color:white;
+}
+
+.nav-link:hover {
+    background-color:#d3d3d3;
+}
