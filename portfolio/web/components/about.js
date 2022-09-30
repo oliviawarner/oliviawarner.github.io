@@ -45,7 +45,7 @@ $(document).ready(function() {
 
   //Arrow Down
   $('#arrow_down').click(function () {
-    window.location.href="#work";
+    window.location.href="#projects";
   });
 
 });

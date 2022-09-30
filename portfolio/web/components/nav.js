@@ -14,6 +14,7 @@ class Nav extends HTMLElement {
               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="#" class="nav-link px-2 link-dark rounded" id="nav_about">About</a></li>
                 <li><a href="#projects" class="nav-link px-2 link-dark rounded" id="nav_projects">Projects</a></li>
+                <li><a href="#skills" class="nav-link px-2 link-dark rounded" id="nav_skills">Skills</a></li>
                 <li><a href="#contact" class="nav-link px-2 link-dark rounded" id="nav_contact">Contact</a></li>
               </ul>
         
