@@ -12,3 +12,6 @@
     background-color: #587B7F !important;
 }
 
+#arrow_down {
+    cursor: pointer;
+}

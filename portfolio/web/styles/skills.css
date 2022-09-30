@@ -1,0 +1,56 @@
+#skills {
+    padding-top:100px;
+}
+
+.skills_icon {
+    height:1.75rem !important;
+    width:1.75rem !important;
+}
+
+#javascript_icon {
+    fill: gold;
+}
+
+#html_icon {
+    fill:orange;
+}
+
+#angular_icon {
+    fill:red;
+}
+
+#sql_icon {
+    color:grey;
+}
+
+#bootstrap_icon {
+    fill:purple;
+}
+
+#c_icon {
+    fill:darkviolet;
+}
+
+#github_icon {
+    fill:black;
+}
+
+#azure_icon{
+    fill:lightskyblue;
+}
+
+#figma_icon {
+    fill:green;
+}
+
+#adobexd_icon {
+    fill:magenta;
+}
+
+#adobeindesign_icon {
+    fill:maroon;
+}
+
+#photoshop_icon {
+    fill:lightsteelblue;
+}
