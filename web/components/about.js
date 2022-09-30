@@ -7,7 +7,7 @@ class About extends HTMLElement {
             <div class="container col-xxl-8 px-4 py-5 vh-100" id="about">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div class="col-10 col-sm-8 col-lg-6">
-              <img src="../imgs/profile_square.jpg" alt="Olivia Warner Profile" width="500" height="500" id="profile" style="z-index:1;">
+              <img src="./imgs/profile_square.jpg" alt="Olivia Warner Profile" width="500" height="500" id="profile" style="z-index:1;">
               <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_czci5s6k.json"  background="transparent"  speed="1"  style="width: 775px; height: 775px; margin-top:-650px; margin-left:-125px; z-index:-1;"  loop  autoplay></lottie-player>
               </div>
               <div class="col-lg-6">
@@ -40,7 +40,7 @@ $(document).ready(function() {
   
   //Resume Download
   $('#resume_download').click(function() {
-      window.open('../files/Olivia_Warner_Resume_2022.pdf', '_blank');
+      window.open('./files/Olivia_Warner_Resume_2022.pdf', '_blank');
   });
 
   //Arrow Down
