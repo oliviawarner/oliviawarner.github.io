@@ -203,15 +203,15 @@
         <form class="p-4 p-md-5 border rounded-3 bg-light pt-3" id="contact-form">
           <input type="hidden" class="form-control" name="contact_number">
           <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingName" placeholder="Name" name="user_name">
+          <input type="text" class="form-control" id="floatingName" placeholder="Name" name="user_name" required>
           <label for="floatingName">Name</label>
           </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingEmail" placeholder="Email" name="user_email">
+              <input type="email" class="form-control" id="floatingEmail" placeholder="Email" name="user_email" required>
               <label for="floatingEmail">Email Address</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" id="floatingMessage" rows="4" placeholder="Message" style="height:100%" name="user_message"></textarea>
+              <textarea class="form-control" id="floatingMessage" rows="4" placeholder="Message" style="height:100%" name="user_message" required></textarea>
               <label for="floatingMessage">Message</label>
             </div>
             <button class="w-100 btn btn-lg btn-warning" type="submit" id="send_message_btn">Send Message</button>
