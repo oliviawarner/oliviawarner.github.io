@@ -2,4 +2,16 @@
     padding-top:100px;
 }
 
+#success_send_icon {
+    color:darkgreen;
+    font-size:25px;
+    padding-right:6px;
+}
+
+#error_send_icon {
+    color:red;
+    font-size:25px;
+    padding-right:6px;
+}
+
 
