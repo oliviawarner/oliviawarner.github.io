@@ -25,28 +25,28 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
       <div class="container-fluid" style="padding-left:90px!important">      
-        <a class="navbar-brand font-monospace fw-bold" href="#">Olivia Warner</a>
+        <a class="navbar-brand font-monospace fw-bold" href="#" title="Olivia Warner">Olivia Warner</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav" style="padding-left:185px!important;">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link rounded" href="#">About</a>
+              <a class="nav-link rounded" href="#" title="About">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link rounded" href="#projects">Projects</a>
+              <a class="nav-link rounded" href="#projects" title="Projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link rounded" href="#skills">Skills</a>
+              <a class="nav-link rounded" href="#skills" title="Skills">Skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link rounded" href="#contact">Contact</a>
+              <a class="nav-link rounded" href="#contact" title="Contact">Contact</a>
             </li>
           </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end">
-          <button type="button" class="btn btn-outline-dark" id="nav_blog_btn">Blog</button>
+          <button type="button" class="btn btn-outline-dark" id="nav_blog_btn" title="View Blog">Blog</button>
         </div>
       </div>
     </nav>
@@ -58,7 +58,7 @@
             <h1 class="display-5 fw-bold">Hello World!</h1>
             <p class="lead">I am a software developer from Pittsburgh, Pennsylvania who creates digital experiences for the web.</p>  
           <div id="resume-container">
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2" id="resume_download">Resume</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2" id="resume_download" title="View Resume">Resume</button>
           </div>
           <div class="pt-3" id="social-container">
             <!--Github-->
@@ -95,7 +95,7 @@
               <div class="card-body text-center">
                 <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_ppluk1ob.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>       
                 <h5 class="card-title fs-4 text-center pb-2">Intense Tennis Camps</h5>
-                <a href="https://www.intensetenniscamps.com/" target="_blank">> View Website</a>
+                <a href="https://www.intensetenniscamps.com/" target="_blank" title="View Intense Tennis Camps Website">> View Website</a>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@
               <div class="card-body text-center">
                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_mCoRxU.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>
                 <h5 class="card-title fs-4 text-center pb-2">Android Task Manager</h5>
-                <a href="https://github.com/oliviawarner/Task-Manager-Android-App" target="_blank">> View GitHub Repo</a>
+                <a href="https://github.com/oliviawarner/Task-Manager-Android-App" target="_blank" title="View Android Task Manager GitHub Repo">> View GitHub Repo</a>
               </div>
             </div>
           </div>
@@ -115,7 +115,7 @@
               <div class="card-body text-center">
                 <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_bz1uh69q.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>
                 <h5 class="card-title fs-4 text-center pb-2">Twitter Topic Modeling</h5>
-                <a href="https://github.com/oliviawarner/Twitter-Topic-Modeling-UI" target="_blank">> View GitHub Repo</a>
+                <a href="https://github.com/oliviawarner/Twitter-Topic-Modeling-UI" target="_blank" title="View Twitter Topic Modeling GitHub Repo">> View GitHub Repo</a>
                 </div>
               </div>
             </div>
@@ -187,7 +187,7 @@
       <div class="row justify-content-center pt-3 pb-4">
         <div class="col">
           <p class="lead">Advanced Google Analytics</p>
-          <a href="https://analytics.google.com/analytics/academy/certificate/KfkqL4F1TjCwUIXfdqIqdw" target="_blank">> View Credential</a>
+          <a href="https://analytics.google.com/analytics/academy/certificate/KfkqL4F1TjCwUIXfdqIqdw" target="_blank" title="View Credential">> View Credential</a>
         </div>
       </div>
     </div>
@@ -204,18 +204,18 @@
         <form class="p-4 p-md-5 border rounded-3 bg-light pt-3" id="contact-form">
           <input type="hidden" class="form-control" name="contact_number">
           <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingName" placeholder="Name" name="user_name" required>
+          <input type="text" class="form-control" id="floatingName" placeholder="Name" name="user_name" required title="Name">
           <label for="floatingName">Name</label>
           </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingEmail" placeholder="Email" name="user_email" required>
+              <input type="email" class="form-control" id="floatingEmail" placeholder="Email" name="user_email" required title="Email Address">
               <label for="floatingEmail">Email Address</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" id="floatingMessage" rows="4" placeholder="Message" style="height:100%" name="user_message" required></textarea>
+              <textarea class="form-control" id="floatingMessage" rows="4" placeholder="Message" style="height:100%" name="user_message" required title="Message"></textarea>
               <label for="floatingMessage">Message</label>
             </div>
-            <button class="w-100 btn btn-lg btn-warning" type="submit" id="send_message_btn">Send Message</button>
+            <button class="w-100 btn btn-lg btn-warning" type="submit" id="send_message_btn" title="Send Message">Send Message</button>
             <div class="alert-container pt-2">
               <div class="alert alert-success visually-hidden" role="alert" id="success_send"><i class="bi bi-check2-circle" id="success_send_icon"></i>
                  <strong>SUCCESS!</strong> Message was sent.
