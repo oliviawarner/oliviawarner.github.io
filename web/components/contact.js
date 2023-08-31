@@ -1,11 +1,11 @@
 $(document).ready(function() {
-        emailjs.init('TESEuE_vHOK9dI3xH');
+        emailjs.init('UbmjM1uXz4Bzavqm8');
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             // generate a five digit number for the contact_number variable
             this.contact_number.value = Math.random() * 100000 | 0;
             // these IDs from the previous steps
-            emailjs.sendForm('service_wedvjoh', 'template_f4sdf1v', this)
+            emailjs.sendForm('service_03w14n7', 'template_f4sdf1v', this)
                 .then(function() {
                     $('#success_send').removeClass('visually-hidden');
                     $('#error_send').addClass('visually-hidden');
