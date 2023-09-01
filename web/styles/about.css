@@ -11,3 +11,12 @@
 #arrow_down {
     cursor: pointer;
 }
+
+#github, #linkedin {
+    color:gainsboro;
+}
+
+#github:hover, #linkedin:hover {
+    color:black;
+    cursor: pointer;
+}
