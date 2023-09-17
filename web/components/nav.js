@@ -40,17 +40,21 @@ $(document).ready(function() {
 // Function to update the dark mode icon based on the mode
 function updateDarkModeIcon(isDarkMode) {
   const darkModeIcon = document.getElementById("dark_mode_icon");
+  const lightModeIcon = document.getElementById("light_mode_icon");
   const darkModeText = document.getElementById("dark_mode_text");
   if (isDarkMode) {
-    darkModeIcon.classList.remove("fa-moon");
-    darkModeIcon.classList.add("fa-sun");
+    // darkModeIcon.classList.remove("fa-moon");
+    darkModeIcon.style.display = "none";
+    lightModeIcon.style.display = "inline-block"
     darkModeIcon.title = "Light Mode";
     darkModeText.textContent = 'Light Mode';
+    darkModeText.style.color = 'white';
   } else {
-    darkModeIcon.classList.remove("fa-sun");
-    darkModeIcon.classList.add("fa-moon");
+    lightModeIcon.style.display = "none";
+    darkModeIcon.style.display = "inline-block";
     darkModeIcon.title = "Dark Mode";
     darkModeText.textContent = 'Dark Mode';
+    darkModeText.style.color = '';
   }
 }
 
