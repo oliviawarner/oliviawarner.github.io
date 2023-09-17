@@ -14,7 +14,7 @@
     padding-right:6px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #contact {
       padding-top:350px;
     }

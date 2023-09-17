@@ -17,13 +17,13 @@
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #blob {
       display: none;
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     #about {
       padding-top: 50px;
     }

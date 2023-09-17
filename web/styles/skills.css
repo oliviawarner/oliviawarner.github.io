@@ -2,8 +2,22 @@
     padding-top:100px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #skills {
       padding-top:200px;
+    }
+  }
+
+  /* Add the following CSS within a <style> tag or a separate CSS file */
+  
+  /* Media query for screens with a maximum width of 768px (typical for mobile devices) */
+  @media (max-width: 768px) {
+    #skill-p {
+        font-size:14px;
+    }
+  }
+  @media (max-width: 768px) {
+    #cert-p {
+        font-size:14px;
     }
   }
