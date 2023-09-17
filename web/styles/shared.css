@@ -60,3 +60,50 @@ a:hover {
 html {
   scroll-behavior: smooth;
 }
+
+.navbar {
+  background-color: white; /* Dark background color for the navigation bar */
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Light text color */
+  /* Add more styles for dark mode here */
+
+  /* Example: Dark mode styles for form labels */
+  .form-floating label {
+    color: black; /* Label text color in dark mode */
+  }
+
+  .card-header {
+    color:black;
+  }
+
+  .card-title {
+    color:black;
+  }
+
+  #project-link {
+    color:black;
+  }
+
+  #cred-link {
+    color:white;
+  }
+
+    /* Example: Dark mode styles for navigation */
+    .navbar {
+      background-color: #333; /* Dark background color for the navigation bar */
+    }
+  
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+      color: #fff; /* Text color for brand and links in dark mode */
+    }
+  
+    .navbar-toggler-icon {
+      background-color: #fff; /* Background color for the navbar toggle icon in dark mode */
+    }
+}
+

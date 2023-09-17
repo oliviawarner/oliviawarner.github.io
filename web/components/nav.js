@@ -14,7 +14,6 @@ $(document).ready(function() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }); 
 
-
   $(document).ready(function() {
     function setVhHeight() {
       var windowHeight = $(window).height();
@@ -36,5 +35,33 @@ $(document).ready(function() {
       setVhHeight();
     });
   });
+
+
+// Function to update the dark mode icon based on the mode
+function updateDarkModeIcon(isDarkMode) {
+  const darkModeIcon = document.getElementById("dark_mode_icon");
+  if (isDarkMode) {
+    darkModeIcon.classList.remove("fa-moon");
+    darkModeIcon.classList.add("fa-sun");
+    darkModeIcon.title = "Light Mode";
+  } else {
+    darkModeIcon.classList.remove("fa-sun");
+    darkModeIcon.classList.add("fa-moon");
+    darkModeIcon.title = "Dark Mode";
+  }
+}
+
+// Initially, set the icon based on whether the page is in dark mode or not
+const isDarkModeInitially = $('body').hasClass('dark-mode');
+updateDarkModeIcon(isDarkModeInitially);
+
+// Click event handler for the dark mode toggle button
+$('#dark_mode_toggle_btn').click(function () {
+  // Toggle the dark mode class on the body element
+  $('body').toggleClass('dark-mode');
+  // Update the icon based on the new mode
+  const isDarkMode = $('body').hasClass('dark-mode');
+  updateDarkModeIcon(isDarkMode);
+});
   
 });
