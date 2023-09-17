@@ -50,3 +50,9 @@ a:hover {
 #footer {
   padding-top: 100px;
 }
+
+@media (max-width: 600px) {
+  #footer {
+    padding-top: 450px;
+  }
+}

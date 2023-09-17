@@ -14,4 +14,8 @@
     padding-right:6px;
 }
 
-
+@media (max-width: 600px) {
+    #contact {
+      padding-top:400px;
+    }
+  }
