@@ -40,14 +40,17 @@ $(document).ready(function() {
 // Function to update the dark mode icon based on the mode
 function updateDarkModeIcon(isDarkMode) {
   const darkModeIcon = document.getElementById("dark_mode_icon");
+  const darkModeText = document.getElementById("dark_mode_text");
   if (isDarkMode) {
     darkModeIcon.classList.remove("fa-moon");
     darkModeIcon.classList.add("fa-sun");
     darkModeIcon.title = "Light Mode";
+    darkModeText.textContent = 'Light Mode';
   } else {
     darkModeIcon.classList.remove("fa-sun");
     darkModeIcon.classList.add("fa-moon");
     darkModeIcon.title = "Dark Mode";
+    darkModeText.textContent = 'Dark Mode';
   }
 }
 
