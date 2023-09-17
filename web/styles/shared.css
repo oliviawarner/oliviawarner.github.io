@@ -46,3 +46,7 @@ a {
 a:hover {
   background-size: 0 3px, 100% 3px;
 }
+
+#footer {
+  padding-top: 400px;
+}
