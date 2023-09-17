@@ -56,3 +56,7 @@ a:hover {
     padding-top: 450px;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
