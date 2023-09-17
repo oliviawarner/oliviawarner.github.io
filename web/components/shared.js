@@ -14,5 +14,4 @@ $(document).ready(function() {
     $(document.querySelectorAll(`[id="hashnode"]`)).click(function () {        
             window.open('https://oliviawarner.hashnode.dev/', '_blank');
     });
-    
 });
