@@ -62,12 +62,6 @@ export default function Contact() {
             <br></br>
             Nice to meet you!
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <p>
-              My name is Olivia Warner. I am a software developer and data analyst based in Pittsburgh, Pennsylvania, 
-              specializing in creating web-based digital experiences and analysis.
-            </p>
-          </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
@@ -80,8 +74,7 @@ export default function Contact() {
             <SocialLink
               href="mailto:oliviawarner.dev@gmail.com"
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
+              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
               oliviawarner.dev@gmail.com
             </SocialLink>
           </ul>
