@@ -60,11 +60,11 @@ export default function About() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Hello World -
             <br></br>
-            My name is Olivia Warner!
+            Nice to meet you!
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I'm a software developer and data analyst based in Pittsburgh, Pennsylvania, 
+              My name is Olivia Warner. I am a software developer and data analyst based in Pittsburgh, Pennsylvania, 
               specializing in creating web-based digital experiences and analysis.
             </p>
           </div>
