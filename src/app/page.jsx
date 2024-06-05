@@ -7,9 +7,7 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  XIcon,
 } from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
@@ -260,7 +258,7 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Developer. Designer. Analyst
+            Developer. Designer. Analyst...
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
           My name is Olivia Warner and I am a software developer, designer ,and data analyst based in Pittsburgh, Pennsylvania.
