@@ -37,7 +37,7 @@ function MailIcon(props) {
 }
 
 export const metadata = {
-  title: 'About',
+  title: 'contact',
   description:
     'Hello World!',
 }

@@ -2,33 +2,31 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoAndroid from '@/images/logos/android.svg'
+import logoTwitter from '@/images/logos/twitter.svg'
+import logoItc from '@/images/logos/itc.png'
 
 const projects = [
   {
     name: 'Intense Tennis Camps',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
+      'Redesigned a website for the ITC with a new modern design and technology.',
     link: { href: 'http://www.intensetenniscamps.com', label: 'intensetenniscamps.com' },
-    logo: logoPlanetaria,
+    logo: logoItc,
   },
   {
     name: 'Android Task Manager',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'Gathers rooted information from the Android OS. It focuses on the OS details, services, and CPU utilization.',
+    link: { href: 'https://github.com/oliviawarner/Task-Manager-Android-App', label: 'github.com' },
+    logo: logoAndroid,
   },
   {
     name: 'Twitter Topic Modeling',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Angular application that scans through Twitter (now X) to retrieve tweets with any keywords that may indicate illegal activity.',
+    link: { href: 'https://github.com/oliviawarner/Twitter-Topic-Modeling-UI', label: 'github.com' },
+    logo: logoTwitter,
   },
 ]
 
