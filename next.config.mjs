@@ -2,6 +2,8 @@ import rehypePrism from '@mapbox/rehype-prism';
 import nextMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
@@ -10,9 +12,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: './', // Add this line to ensure assets are correctly referenced
+  basePath: isGithubPages ? '/oliviawarner.github.io' : '',
+  assetPrefix: isGithubPages ? '/oliviawarner.github.io/' : '',
   webpack: (config) => {
-    config.output.publicPath = './_next/'; // Adjust the public path
+    config.output.publicPath = isGithubPages ? '/oliviawarner.github.io/_next/' : '/_next/';
     return config;
   },
 };
