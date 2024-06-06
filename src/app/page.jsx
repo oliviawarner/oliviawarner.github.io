@@ -161,10 +161,19 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="files/Olivia_Warner_Resume_2023.pdf" variant="secondary" className="group mt-6 w-full">
+      <a
+      href="/files/Olivia_Warner_Resume_2023.pdf"
+      download
+      style={{ textDecoration: 'none' }}
+    >
+      <Button
+        variant="secondary"
+        className="group mt-6 w-full d-flex justify-content-center align-items-center"
+      >
         Download Resume
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50 ml-2" />
       </Button>
+    </a>
     </div>
   )
 }
