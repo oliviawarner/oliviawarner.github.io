@@ -8,6 +8,7 @@ import portraitImage from '@/images/portrait.jpg'
 import { Button } from '@/components/Button'
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -54,9 +55,15 @@ const Alert = ({ type, message, onClose }) => {
 export const ContactForm = () => {
   const form = useRef();
   const [alert, setAlert] = useState(null);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!recaptchaValue) {
+      setAlert({ type: 'error', message: 'Please complete the reCAPTCHA' });
+      return;
+    }
 
     emailjs.sendForm(
       'service_03w14n7',
@@ -76,6 +83,11 @@ export const ContactForm = () => {
   const clearForm = () => {
     form.current.reset();
     setAlert({ type: 'info', message: 'Form cleared!' });
+    setRecaptchaValue(null);
+  };
+
+  const handleRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
   };
 
   return (
@@ -123,6 +135,12 @@ export const ContactForm = () => {
             required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
           ></textarea>
+        </div>
+        <div>
+          <ReCAPTCHA
+            sitekey="6LcBn_IpAAAAAH8zrRqEFb0jKD2WzYUpYhurkKAP"
+            onChange={handleRecaptchaChange}
+          />
         </div>
         <div className="flex space-x-4">
           <Button type="submit" value="Send" variant="secondary" className="flex-1 flex justify-center items-center py-2 px-4 mt-4">
