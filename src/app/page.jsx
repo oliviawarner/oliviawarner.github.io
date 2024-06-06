@@ -151,7 +151,7 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+<div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -180,7 +180,7 @@ function Certifications() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+<div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <AcademicCapIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Certifications</span>
