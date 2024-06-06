@@ -10,8 +10,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  assetPrefix: './', // Add this line to ensure assets are correctly referenced
   webpack: (config) => {
-    config.output.publicPath = '/_next/';
+    config.output.publicPath = './_next/'; // Adjust the public path
     return config;
   },
 };
