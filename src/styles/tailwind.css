@@ -2,3 +2,20 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
+
+/* Custom styles for the project cards */
+.custom-card {
+    @apply rounded-lg border border-gray-200 p-4 transition-all;
+  }
+  
+  .custom-card:hover {
+    @apply ring-2 ring-teal-400 shadow-lg shadow-teal-400;
+  }
+  
+  .custom-card .card-image-container {
+    @apply relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0;
+  }
+  
+  .custom-card:hover .card-image-container {
+    @apply ring-teal-400;
+  }
