@@ -9,6 +9,7 @@ import {
   XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import { Button } from '@/components/Button'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -100,12 +101,9 @@ export default function Contact() {
                 ></textarea>
               </div>
               <div>
-                <button
-                  type="submit"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
-                >
+                <Button type="submit" variant="secondary" className="w-full flex justify-center py-2 px-4 mt-4">
                   Submit
-                </button>
+                </Button>
               </div>
             </form>
           </div>

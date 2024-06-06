@@ -1,13 +1,12 @@
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
-
 import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
     template: '%s - Olivia Warner - Software Developer',
     default:
-      'Olivia Warner',
+      'Olivia Warner - Software Developer',
   },
   description:
     'Olivia Warner - Software Developer',
