@@ -1,23 +1,25 @@
 "use client";
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
-import {motion} from 'framer-motion'
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
+import Image from 'next/image';
+import Link from 'next/link';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/Button';
+import { Container } from '@/components/Container';
 import {
   GitHubIcon,
   LinkedInIcon,
-} from '@/components/SocialIcons'
-import logoSru from '@/images/logos/sru.png'
-import logoCei from '@/images/logos/cei.webp'
-import logoItc from '@/images/logos/itc.png'
-import logoMicrosoft from '@/images/logos/microsoft.png'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+} from '@/components/SocialIcons';
+
+// Direct references to images in the public folder
+const logoSru = '/images/logos/sru.png';
+const logoCei = '/images/logos/cei.webp';
+const logoItc = '/images/logos/itc.png';
+const logoMicrosoft = '/images/logos/microsoft.png';
+const image1 = '/images/photos/image-1.jpg';
+const image2 = '/images/photos/image-2.jpg';
+const image3 = '/images/photos/image-3.jpg';
+const image4 = '/images/photos/image-4.jpg';
+const image5 = '/images/photos/image-5.jpg';
 
 function AcademicCapIcon(props) {
   return (
@@ -36,7 +38,7 @@ function AcademicCapIcon(props) {
         className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }
 
 function BriefcaseIcon(props) {
@@ -59,7 +61,7 @@ function BriefcaseIcon(props) {
         className="stroke-zinc-400 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }
 
 function ArrowDownIcon(props) {
@@ -72,7 +74,7 @@ function ArrowDownIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 function SocialLink({ icon: Icon, ...props }) {
@@ -80,17 +82,17 @@ function SocialLink({ icon: Icon, ...props }) {
     <Link className="group -m-2 p-3" {...props}>
       <Icon className="h-8 w-8 fill-zinc-500 transition group-hover:fill-teal-500 dark:fill-zinc-400 dark:group-hover:fill-teal-300" />
     </Link>
-  )
+  );
 }
 
 function Role({ role }) {
   let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label
+    typeof role.start === 'string' ? role.start : role.start.label;
   let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime
+    typeof role.start === 'string' ? role.start : role.start.dateTime;
 
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+  let endLabel = typeof role.end === 'string' ? role.end : role.end.label;
+  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime;
 
   return (
     <li className="flex gap-4">
@@ -117,7 +119,7 @@ function Role({ role }) {
         </dd>
       </dl>
     </li>
-  )
+  );
 }
 
 function Resume() {
@@ -146,10 +148,10 @@ function Resume() {
       start: '2020',
       end: '2021',
     },
-  ]
+  ];
 
   return (
-  <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
+    <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Experience</span>
@@ -160,20 +162,20 @@ function Resume() {
         ))}
       </ol>
       <a
-      href="/files/Olivia_Warner_Resume_2023.pdf"
-      download
-      style={{ textDecoration: 'none' }}
-    >
-      <Button
-        variant="secondary"
-        className="group mt-6 w-full d-flex justify-content-center align-items-center"
+        href="/files/Olivia_Warner_Resume_2023.pdf"
+        download
+        style={{ textDecoration: 'none' }}
       >
-        Download Resume
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50 ml-2" />
-      </Button>
-    </a>
-  </div>
-  )
+        <Button
+          variant="secondary"
+          className="group mt-6 w-full d-flex justify-content-center align-items-center"
+        >
+          Download Resume
+          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50 ml-2" />
+        </Button>
+      </a>
+    </div>
+  );
 }
 
 function Certifications() {
@@ -184,10 +186,10 @@ function Certifications() {
       logo: logoMicrosoft,
       date: '2022',
     },
-  ]
+  ];
 
   return (
-<div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
+    <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <AcademicCapIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Certifications</span>
@@ -216,7 +218,7 @@ function Certifications() {
         ))}
       </ol>
     </div>
-  )
+  );
 }
 
 function Photos() {
@@ -231,7 +233,7 @@ function Photos() {
       <div className="mt-8 -my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <motion.div
-            key={image.src}
+            key={image}
             whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)" }}
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
@@ -288,5 +290,5 @@ export default function Home() {
       </Container>
       <Photos />
     </>
-  )
+  );
 }

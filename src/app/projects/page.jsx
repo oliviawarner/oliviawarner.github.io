@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAndroid from '@/images/logos/android.svg'
-import logoTwitter from '@/images/logos/twitter.svg'
-import logoItc from '@/images/logos/itc.png'
+const logoAndroid = '/images/logos/android.svg'
+const logoTwitter = '/images/logos/twitter.svg'
+const logoItc = '/images/logos/itc.png'
 
 const projects = [
   {

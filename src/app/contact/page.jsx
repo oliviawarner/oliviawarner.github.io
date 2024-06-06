@@ -4,7 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+const portraitImage = '/images/portrait.jpg'
 import { Button } from '@/components/Button'
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';

@@ -12,6 +12,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  webpack: (config) => {
+    config.output.publicPath = process.env.NODE_ENV === 'production' ? '/oliviawarner.github.io/_next/' : '/_next/';
+    return config;
+  },
 };
 
 const withMDX = nextMDX({

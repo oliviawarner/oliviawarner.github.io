@@ -14,7 +14,7 @@ import {
 } from '@headlessui/react'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.jpg'
+const avatarImage = '/images/avatar.jpg';
 
 function CloseIcon(props) {
   return (
