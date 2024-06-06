@@ -83,7 +83,6 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-
 function Role({ role }) {
   let startLabel =
     typeof role.start === 'string' ? role.start : role.start.label
