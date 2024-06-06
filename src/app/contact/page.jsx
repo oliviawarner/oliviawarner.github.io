@@ -3,14 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 import { Button } from '@/components/Button'
 import emailjs from '@emailjs/browser';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -37,8 +34,26 @@ function MailIcon(props) {
   )
 }
 
+const Alert = ({ type, message, onClose }) => {
+  const alertStyles = {
+    success: 'bg-green-100 border-green-400 text-green-700',
+    error: 'bg-red-100 border-red-400 text-red-700',
+    info: 'bg-blue-100 border-blue-400 text-blue-700',
+  };
+
+  return (
+    <div className={`border-l-4 p-4 ${alertStyles[type]} mb-4`} role="alert">
+      <div className="flex justify-between items-center">
+        <span className="block sm:inline">{message}</span>
+        <button onClick={onClose} className="text-lg font-semibold ml-4">&times;</button>
+      </div>
+    </div>
+  );
+};
+
 export const ContactForm = () => {
   const form = useRef();
+  const [alert, setAlert] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -50,61 +65,77 @@ export const ContactForm = () => {
       'UbmjM1uXz4Bzavqm8'
     ).then(
       () => {
-        console.log('SUCCESS!');
+        setAlert({ type: 'success', message: 'Email sent successfully!' });
       },
       (error) => {
-        console.log('FAILED...', error.text);
+        setAlert({ type: 'error', message: `Failed to send email: ${error.text}` });
       }
     );
   };
 
+  const clearForm = () => {
+    form.current.reset();
+    setAlert({ type: 'info', message: 'Form cleared!' });
+  };
+
   return (
-    <form className="space-y-6" ref={form} onSubmit={sendEmail}>
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-          Name
-        </label>
-        <input
-          id="name"
-          name="user_name"
-          type="text"
-          required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
+    <>
+      {alert && (
+        <Alert
+          type={alert.type}
+          message={alert.message}
+          onClose={() => setAlert(null)}
         />
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-          Email
-        </label>
-        <input
-          id="email"
-          name="user_email"
-          type="email"
-          required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
-        />
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
-        ></textarea>
-      </div>
-      <div>
-        <Button type="submit" value="Send" variant="secondary" className="w-full flex justify-center py-2 px-4 mt-4">
-          Submit
-        </Button>
-      </div>
-    </form>
+      )}
+      <form className="space-y-6" ref={form} onSubmit={sendEmail}>
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
+            Name
+          </label>
+          <input
+            id="name"
+            name="user_name"
+            type="text"
+            required
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
+            Email
+          </label>
+          <input
+            id="email"
+            name="user_email"
+            type="email"
+            required
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-200">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm dark:bg-zinc-800 dark:border-zinc-700 dark:text-zinc-200"
+          ></textarea>
+        </div>
+        <div className="flex space-x-4">
+          <Button type="submit" value="Send" variant="secondary" className="flex-1 flex justify-center items-center py-2 px-4 mt-4">
+            Submit
+          </Button>
+          <Button type="button" onClick={clearForm} variant="secondary" className="flex-1 flex justify-center items-center py-2 px-4 mt-4">
+            Clear Form
+          </Button>
+        </div>
+      </form>
+    </>
   );
 };
-
 
 export default function Contact() {
   return (
@@ -127,7 +158,8 @@ export default function Contact() {
             Nice to meet you! 🤩
           </h1>
           <div className="mt-8 p-6 border border-gray-300 rounded-md">
-          <ContactForm/>
+            <ContactForm />
+          </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
@@ -140,12 +172,12 @@ export default function Contact() {
             <SocialLink
               href="mailto:oliviawarner.dev@gmail.com"
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40">
+              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+            >
               oliviawarner.dev@gmail.com
             </SocialLink>
           </ul>
         </div>
-      </div>
       </div>
     </Container>
   )
