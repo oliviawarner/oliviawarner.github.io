@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAndroid from '@/images/logos/android.svg'

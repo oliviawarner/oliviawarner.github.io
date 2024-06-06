@@ -5,12 +5,12 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Olivia Warner',
+    template: '%s - Olivia Warner - Software Developer',
     default:
       'Olivia Warner',
   },
   description:
-    'Olivia Warner',
+    'Olivia Warner - Software Developer',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
