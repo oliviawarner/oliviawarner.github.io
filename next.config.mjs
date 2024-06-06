@@ -7,13 +7,13 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   trailingSlash: true,
   output: 'export',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/oliviawarner.github.io/' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/oliviawarner.github.io' : '',
+  // Remove assetPrefix and basePath settings
   images: {
     unoptimized: true,
   },
   webpack: (config) => {
-    config.output.publicPath = process.env.NODE_ENV === 'production' ? '/oliviawarner.github.io/_next/' : '/_next/';
+    // Ensure the public path is set correctly for production
+    config.output.publicPath = '/_next/';
     return config;
   },
 };
