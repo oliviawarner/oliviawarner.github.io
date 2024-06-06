@@ -7,13 +7,11 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   trailingSlash: true,
   output: 'export',
-  // Remove assetPrefix and basePath settings
   images: {
     unoptimized: true,
   },
   webpack: (config) => {
-    // Ensure the public path is set correctly for production
-    config.output.publicPath = '/_next/';
+    config.output.publicPath = process.env.NODE_ENV === 'production' ? '/_next/' : '/_next/';
     return config;
   },
 };
