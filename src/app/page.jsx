@@ -1,5 +1,4 @@
-// components/Photos.jsx
-"use client"; // Ensure this directive is at the top of the file
+"use client";
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -19,7 +18,6 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { formatDate } from '@/lib/formatDate'
 
 function AcademicCapIcon(props) {
   return (
@@ -151,7 +149,7 @@ function Resume() {
   ]
 
   return (
-<div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
+  <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Experience</span>
@@ -174,7 +172,7 @@ function Resume() {
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50 ml-2" />
       </Button>
     </a>
-    </div>
+  </div>
   )
 }
 

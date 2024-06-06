@@ -4,17 +4,12 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Olivia Warner - Software Developer',
+    template: '%s - Olivia Warner',
     default:
       'Olivia Warner - Software Developer',
   },
   description:
-    'Olivia Warner - Software Developer',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
+    'Olivia Warner - Software Developer'
 }
 
 export default function RootLayout({ children }) {

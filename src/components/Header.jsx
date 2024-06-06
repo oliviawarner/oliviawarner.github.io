@@ -1,5 +1,4 @@
 'use client'
-
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,7 +13,6 @@ import {
   TransitionChild,
 } from '@headlessui/react'
 import clsx from 'clsx'
-
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 

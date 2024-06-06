@@ -81,8 +81,5 @@ export default function Projects() {
     ))}
   </ul>
 </SimpleLayout>
-
-
-
   )
 }
