@@ -77,11 +77,12 @@ function ArrowDownIcon(props) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="group -m-2 p-3" {...props}>
+      <Icon className="h-8 w-8 fill-zinc-500 transition group-hover:fill-teal-500 dark:fill-zinc-400 dark:group-hover:fill-teal-300" />
     </Link>
   )
 }
+
 
 function Role({ role }) {
   let startLabel =
@@ -260,12 +261,12 @@ export default function Home() {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="#"
+              href="https://github.com/oliviawarner"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/olivia-warner-a32015151/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
