@@ -11,7 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   webpack: (config) => {
-    config.output.publicPath = process.env.NODE_ENV === 'production' ? '/_next/' : '/_next/';
+    config.output.publicPath = '/_next/';
     return config;
   },
 };
