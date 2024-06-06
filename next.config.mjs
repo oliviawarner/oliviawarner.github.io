@@ -7,6 +7,11 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   trailingSlash: true,
   output: 'export',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/oliviawarner.github.io/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/oliviawarner.github.io' : '',
+  images: {
+    unoptimized: true,
+  },
 };
 
 const withMDX = nextMDX({
