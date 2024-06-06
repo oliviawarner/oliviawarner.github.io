@@ -224,7 +224,11 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+      <h2 className="text-3xl font-bold tracking-tight text-center text-zinc-800 dark:text-zinc-100 flex items-center justify-center">
+        Tidy up Pittsburgh
+        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50 ml-2" />
+      </h2>
+      <div className="mt-8 -my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <motion.div
             key={image.src}
@@ -272,8 +276,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Photos />
-      <Container className="mt-24 md:mt-28">
+      <Container className="mt-16 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2 lg:gap-x-12">
           <div>
             <Resume />
@@ -283,6 +286,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      <Photos />
     </>
   )
 }
