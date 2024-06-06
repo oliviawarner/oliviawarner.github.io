@@ -1,2 +1,1 @@
-# oliviawarner.github.io
-# Portfolio
+Olivia Warner - Developer Portfolio Site
