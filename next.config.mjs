@@ -15,7 +15,7 @@ const nextConfig = {
   basePath: isGithubPages ? '/oliviawarner.github.io' : '',
   assetPrefix: isGithubPages ? '/oliviawarner.github.io/' : '',
   webpack: (config) => {
-    config.output.publicPath = isGithubPages ? '/oliviawarner.github.io/_next/' : '/_next/';
+    config.output.publicPath = isGithubPages ? '/oliviawarner.github.io/out/_next/' : '/_next/';
     return config;
   },
 };
