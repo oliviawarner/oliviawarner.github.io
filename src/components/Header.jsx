@@ -139,8 +139,16 @@ function MobileNavigation(props) {
   )
 }
 
+function normalizePath(path) {
+  // Remove trailing slash if present
+  return path.replace(/\/$/, '').toLowerCase();
+}
+
 function NavItem({ href, children }) {
-  let isActive = usePathname() === href
+  const pathname = usePathname();
+  const normalizedPathname = normalizePath(pathname);
+  const normalizedHref = normalizePath(href);
+  const isActive = normalizedPathname === normalizedHref;
 
   return (
     <li>
