@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -23,9 +23,6 @@ jobs:
 
     - name: Build the project
       run: npm run build
-
-    - name: Export the project
-      run: npm run export
 
     - name: Add .nojekyll
       run: touch out/.nojekyll
