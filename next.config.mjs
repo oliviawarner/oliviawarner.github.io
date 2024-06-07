@@ -10,10 +10,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/oliviawarner.github.io', // Repository name
-  assetPrefix: '/oliviawarner.github.io/', // Repository name
   webpack: (config) => {
-    config.output.publicPath = '/oliviawarner.github.io/_next/'; // Correct public path for GitHub Pages
+    config.output.publicPath = '/_next/';
     return config;
   },
 };
