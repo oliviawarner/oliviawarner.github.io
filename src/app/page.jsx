@@ -163,7 +163,7 @@ function Resume() {
         ))}
       </ol>
       <a
-        href="/files/Olivia_Warner_Resume_2023.pdf"
+        href="/files/Olivia_Warner_Resume_2024.pdf"
         download
         style={{ textDecoration: 'none' }}
       >
