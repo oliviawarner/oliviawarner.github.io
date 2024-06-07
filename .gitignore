@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+!/out/.nojekyll  # Explicitly include .nojekyll in the out directory
 
 # production
 /build
