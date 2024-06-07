@@ -235,6 +235,7 @@ function Photos() {
           <motion.div
             key={image}
             whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)" }}
+            onTap={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)" }}
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
               rotations[imageIndex % rotations.length]
