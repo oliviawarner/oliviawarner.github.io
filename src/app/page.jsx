@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import {
@@ -223,6 +224,14 @@ function Certifications() {
 
 function Photos() {
   const rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2'];
+  const [tappedImages, setTappedImages] = useState({});
+
+  const handleTap = (imageIndex) => {
+    setTappedImages((prevState) => ({
+      ...prevState,
+      [imageIndex]: !prevState[imageIndex],
+    }));
+  };
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -235,10 +244,10 @@ function Photos() {
           <motion.div
             key={image}
             whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)" }}
-            onTap={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)" }}
+            onTap={() => handleTap(imageIndex)}
             className={clsx(
               'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length]
+              tappedImages[imageIndex] ? '' : rotations[imageIndex % rotations.length]
             )}
           >
             <Image
