@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postexport": "cp public/.nojekyll out",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },  
