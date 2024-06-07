@@ -181,10 +181,10 @@ export default function Contact() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink href="https://github.com/oliviawarner" icon={GitHubIcon} className="mt-4">
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink href="https://www.linkedin.com/in/olivia-warner-a32015151/" icon={LinkedInIcon} className="mt-4">
               Follow on LinkedIn
             </SocialLink>
             <SocialLink

@@ -185,7 +185,7 @@ function Certifications() {
       title: 'Power BI Data Analyst Associate',
       issuer: 'Microsoft',
       logo: logoMicrosoft,
-      date: '2022',
+      date: '2023',
     },
   ];
 
