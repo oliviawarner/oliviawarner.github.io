@@ -6,10 +6,10 @@ export const metadata = {
   title: {
     template: '%s - Olivia Warner',
     default:
-      'Olivia Warner - Software Developer',
+      'Olivia Warner - Software Developer & SASE Engineer',
   },
   description:
-    'Olivia Warner - Software Developer'
+    'Olivia Warner - Software Developer & SASE Engineer'
 }
 
 export default function RootLayout({ children }) {

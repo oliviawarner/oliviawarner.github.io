@@ -15,7 +15,9 @@ import {
 const logoSru = '/images/logos/sru.png';
 const logoCei = '/images/logos/cei.webp';
 const logoItc = '/images/logos/itc.png';
+const logoEliteOps = '/images/logos/eliteops-logo.jpeg';
 const logoMicrosoft = '/images/logos/microsoft.png';
+const logoZscaler = '/images/logos/zscaler-logo.png';
 const image1 = '/images/photos/image-1.jpg';
 const image2 = '/images/photos/image-2.jpg';
 const image3 = '/images/photos/image-3.jpg';
@@ -126,14 +128,21 @@ function Role({ role }) {
 function Resume() {
   let resume = [
     {
-      company: 'CEI',
-      title: 'Developer 1',
-      logo: logoCei,
-      start: '2021',
+      company: 'EliteOps',
+      title: 'Senior SASE Engineer',
+      logo: logoEliteOps,
+      start: '2025',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+    {
+      company: 'CEI',
+      title: 'Associate Developer & Developer 1',
+      logo: logoCei,
+      start: '2021',
+      end: '2025'
     },
     {
       company: 'Slippery Rock University',
@@ -185,7 +194,15 @@ function Certifications() {
       title: 'Power BI Data Analyst Associate',
       issuer: 'Microsoft',
       logo: logoMicrosoft,
-      date: 'Issued: 2023',
+      date: 'Issued: 2023 | Expires: 2026',
+      credentialId: 'Credential ID: I750-7391'
+    },
+    {
+      title: 'Zero Trust Automation (EDU-270)',
+      issuer: 'Zscaler',
+      logo: logoZscaler,
+      date: 'Issued: 2025 | Expires: 2027',
+      credentialId: 'Credential ID: 98wape9dkkg8'
     },
   ];
 
@@ -196,28 +213,33 @@ function Certifications() {
         <span className="ml-3">Certifications</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {certifications.map((certification, certIndex) => (
-          <li key={certIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={certification.logo} alt="" className="h-7 w-7" unoptimized />
+      {certifications.map((certification, certIndex) => (
+        <li key={certIndex} className="flex gap-4">
+          <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <Image src={certification.logo} alt="" className="h-7 w-7" unoptimized />
+          </div>
+          <dl className="flex flex-auto flex-wrap gap-x-2">
+            <dt className="sr-only">Certification</dt>
+            <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              {certification.title}
+            </dd>
+
+            <dt className="sr-only">Credential ID</dt>
+            <dd className="w-full flex-none text-xs text-zinc-500 dark:text-zinc-400">
+              {certification.credentialId}
+            </dd>
+
+            {/* Combine issuer and issued/expiration dates on the same line */}
+            <div className="flex w-full justify-between text-xs text-zinc-500 dark:text-zinc-400">
+              <dd className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>{certification.issuer}</dd>
+              <dd>
+                {certification.date}
+              </dd>
             </div>
-            <dl className="flex flex-auto flex-wrap gap-x-2">
-              <dt className="sr-only">Certification</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {certification.title}
-              </dd>
-              <dt className="sr-only">Issuer</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {certification.issuer}
-              </dd>
-              <dt className="sr-only">Date</dt>
-              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500">
-                <time dateTime={certification.date}>{certification.date}</time>
-              </dd>
-            </dl>
-          </li>
-        ))}
-      </ol>
+          </dl>
+        </li>
+      ))}
+    </ol>
     </div>
   );
 }
@@ -232,35 +254,6 @@ function Photos() {
       [imageIndex]: !prevState[imageIndex],
     }));
   };
-
-  return (
-    <div className="mt-16 sm:mt-20">
-      <h2 className="text-3xl font-bold tracking-tight text-center text-zinc-800 dark:text-zinc-100 flex items-center justify-center">
-        Tidy up Pittsburgh
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50 ml-2" />
-      </h2>
-      <div className="mt-8 -my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <motion.div
-            key={image}
-            whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.12)" }}
-            onTap={() => handleTap(imageIndex)}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              tappedImages[imageIndex] ? '' : rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
 }
 
 export default function Home() {
@@ -269,10 +262,10 @@ export default function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Developer. Designer. Analyst.
+            Developer. Designer. Analyst. Engineer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hello! My name is Olivia Warner and I am a software developer, designer, and data analyst based in Pittsburgh, Pennsylvania.
+            Hello! My name is Olivia Warner and I am a software developer, designer, data analyst & SASE engineer based in Pittsburgh, Pennsylvania.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
