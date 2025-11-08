@@ -262,10 +262,10 @@ export default function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Developer. Designer. Analyst. Engineer.
+            Engineer. Analyst. Designer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hello! My name is Olivia Warner and I am a software developer, designer, data analyst & SASE engineer based in Pittsburgh, Pennsylvania.
+            Hello! My name is Olivia Warner and I am a software & SASE engineer, data analyst, & designer based in Pittsburgh, Pennsylvania.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
