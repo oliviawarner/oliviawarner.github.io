@@ -1,10 +1,8 @@
-"use client"; 
-import Image from 'next/image'
+"use client";
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-const portraitImage = '/images/portrait.jpg'
 import { Button } from '@/components/Button'
 import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
@@ -158,43 +156,24 @@ export const ContactForm = () => {
 export default function Contact() {
   return (
     <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div className="lg:pl-20">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
-            <Image
-              src={portraitImage}
-              alt=""
-              sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-            />
-          </div>
-        </div>
-        <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hello World -
-            <br></br>
-            Nice to meet you! 🤩
-          </h1>
-          <div className="mt-8 p-6 border border-gray-300 rounded-md">
-            <ContactForm />
-          </div>
-        </div>
-        <div className="lg:pl-20">
-          <ul role="list">
-            <SocialLink href="https://github.com/oliviawarner" icon={GitHubIcon} className="mt-4">
-              Follow on GitHub
-            </SocialLink>
-            <SocialLink href="https://www.linkedin.com/in/olivia-warner-a32015151/" icon={LinkedInIcon} className="mt-4">
-              Follow on LinkedIn
-            </SocialLink>
-            <SocialLink
-              href="mailto:oliviawarner.dev@gmail.com"
-              icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
-              oliviawarner.dev@gmail.com
-            </SocialLink>
-          </ul>
+      <div className="max-w-2xl">
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          Get in touch.
+        </h1>
+        <ul role="list" className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+          <SocialLink href="https://github.com/oliviawarner" icon={GitHubIcon}>
+            GitHub
+          </SocialLink>
+          <SocialLink href="https://www.linkedin.com/in/olivia-warner-a32015151/" icon={LinkedInIcon}>
+            LinkedIn
+          </SocialLink>
+          <SocialLink href="mailto:oliviawarner.dev@gmail.com" icon={MailIcon}>
+            oliviawarner.dev@gmail.com
+          </SocialLink>
+        </ul>
+
+        <div className="mt-10 rounded-2xl border border-zinc-200 p-6 dark:border-zinc-700/50">
+          <ContactForm />
         </div>
       </div>
     </Container>

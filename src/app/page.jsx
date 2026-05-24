@@ -1,9 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { Button } from '@/components/Button';
 import { Container } from '@/components/Container';
 import {
@@ -11,18 +9,12 @@ import {
   LinkedInIcon,
 } from '@/components/SocialIcons';
 
-// Direct references to images in the public folder
 const logoSru = '/images/logos/sru.png';
 const logoCei = '/images/logos/cei.webp';
 const logoItc = '/images/logos/itc.png';
 const logoEliteOps = '/images/logos/eliteops-logo.jpeg';
 const logoMicrosoft = '/images/logos/microsoft.png';
 const logoZscaler = '/images/logos/zscaler-logo.png';
-const image1 = '/images/photos/image-1.jpg';
-const image2 = '/images/photos/image-2.jpg';
-const image3 = '/images/photos/image-3.jpg';
-const image4 = '/images/photos/image-4.jpg';
-const image5 = '/images/photos/image-5.jpg';
 
 function AcademicCapIcon(props) {
   return (
@@ -82,45 +74,33 @@ function ArrowDownIcon(props) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-2 p-3" {...props}>
+    <Link className="group -m-2 p-2" {...props}>
       <Icon className="h-8 w-8 fill-zinc-500 transition group-hover:fill-teal-500 dark:fill-zinc-400 dark:group-hover:fill-teal-300" />
     </Link>
   );
 }
 
-function Role({ role }) {
-  let startLabel =
-    typeof role.start === 'string' ? role.start : role.start.label;
-  let startDate =
-    typeof role.start === 'string' ? role.start : role.start.dateTime;
-
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label;
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime;
-
+function CompanyEntry({ entry }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image src={entry.logo} alt="" width={28} height={28} className="h-7 w-7" unoptimized />
       </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
-        </dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-          aria-label={`${startLabel} until ${endLabel}`}
-        >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
-          <time dateTime={endDate}>{endLabel}</time>
-        </dd>
-      </dl>
+      <div className="flex flex-auto flex-col">
+        <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          {entry.company}
+        </span>
+        <ol className="mt-1.5 space-y-1.5">
+          {entry.roles.map((role, i) => (
+            <li key={i} className="flex items-baseline justify-between gap-2">
+              <span className="text-xs text-zinc-500 dark:text-zinc-400">{role.title}</span>
+              <span className="shrink-0 text-xs text-zinc-400 dark:text-zinc-500">
+                {role.start} — {role.end}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </div>
     </li>
   );
 }
@@ -129,46 +109,41 @@ function Resume() {
   let resume = [
     {
       company: 'EliteOps',
-      title: 'Senior SASE Engineer',
       logo: logoEliteOps,
-      start: '2025',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
+      roles: [
+        { title: 'Senior Optimize Engineer', start: '2026', end: 'Present' },
+        { title: 'Senior SASE Support Specialist', start: '2025', end: '2026' },
+      ],
     },
     {
       company: 'CEI',
-      title: 'Associate Developer & Developer 1',
       logo: logoCei,
-      start: '2021',
-      end: '2025'
+      roles: [
+        { title: 'Software Developer 1', start: '2022', end: '2025' },
+        { title: 'Associate Software Developer', start: '2021', end: '2022' },
+      ],
     },
     {
       company: 'Slippery Rock University',
-      title: 'Web Assistant',
       logo: logoSru,
-      start: '2020',
-      end: '2021',
+      roles: [{ title: 'Web Assistant', start: '2020', end: '2021' }],
     },
     {
       company: 'Intense Tennis Camps',
-      title: 'Freelance Web Developer',
       logo: logoItc,
-      start: '2020',
-      end: '2021',
+      roles: [{ title: 'Freelance Web Developer', start: '2020', end: '2021' }],
     },
   ];
 
   return (
-    <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
+    <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-700/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Experience</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
+        {resume.map((entry, i) => (
+          <CompanyEntry key={i} entry={entry} />
         ))}
       </ol>
       <a
@@ -191,83 +166,164 @@ function Resume() {
 function Certifications() {
   let certifications = [
     {
-      title: 'Power BI Data Analyst Associate',
-      issuer: 'Microsoft',
-      logo: logoMicrosoft,
-      date: 'Issued: 2023 | Expires: 2026',
-      credentialId: 'Credential ID: I750-7391'
+      title: 'Zscaler Digital Transformation Engineer (ZDTE)',
+      link: 'https://www.credly.com/badges/2d973cec-0109-4255-9de9-d93446295d35',
+      logo: logoZscaler,
+      date: 'Issued: 2026 | Expires: 2028',
+      credentialId: 'Credential ID: 2d973cec-0109-4255-9de9-d93446295d35',
     },
     {
-      title: 'Zero Trust Automation (EDU-270)',
-      issuer: 'Zscaler',
+      title: 'Zscaler Digital Transformation Administrator (ZDTA)',
+      link: 'https://www.credly.com/badges/7ace8783-157c-4a3f-b70d-d0986e445ac1',
       logo: logoZscaler,
       date: 'Issued: 2025 | Expires: 2027',
-      credentialId: 'Credential ID: 98wape9dkkg8'
+      credentialId: 'Credential ID: 7ace8783-157c-4a3f-b70d-d0986e445ac1',
+    },
+    {
+      title: 'Zscaler Zero Trust Automation (EDU-270)',
+      logo: logoZscaler,
+      date: 'Issued: 2025 | Expires: 2027',
+      credentialId: 'Credential ID: 98wape9dkkg8',
+    },
+    {
+      title: 'Microsoft Power BI Data Analyst Associate',
+      logo: logoMicrosoft,
+      date: 'Issued: 2023 | Expires: 2026',
+      credentialId: 'Credential ID: I750-7391',
     },
   ];
 
   return (
-    <div className="rounded-2xl border border-zinc-300 p-6 dark:border-zinc-500/50">
+    <div className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-700/50">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <AcademicCapIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Certifications</span>
       </h2>
       <ol className="mt-6 space-y-4">
-      {certifications.map((certification, certIndex) => (
-        <li key={certIndex} className="flex gap-4">
-          <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-            <Image src={certification.logo} alt="" className="h-7 w-7" unoptimized />
-          </div>
-          <dl className="flex flex-auto flex-wrap gap-x-2">
-            <dt className="sr-only">Certification</dt>
-            <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-              {certification.title}
-            </dd>
-
-            <dt className="sr-only">Credential ID</dt>
-            <dd className="w-full flex-none text-xs text-zinc-500 dark:text-zinc-400">
-              {certification.credentialId}
-            </dd>
-
-            {/* Combine issuer and issued/expiration dates on the same line */}
-            <div className="flex w-full justify-between text-xs text-zinc-500 dark:text-zinc-400">
-              <dd className='text-sm font-medium text-zinc-900 dark:text-zinc-100'>{certification.issuer}</dd>
-              <dd>
-                {certification.date}
-              </dd>
+        {certifications.map((certification, certIndex) => (
+          <li key={certIndex} className="flex gap-4">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <Image src={certification.logo} alt="" width={28} height={28} className="h-7 w-7" unoptimized />
             </div>
-          </dl>
-        </li>
-      ))}
-    </ol>
+            <dl className="flex flex-auto flex-wrap gap-x-2">
+              <dt className="sr-only">Certification</dt>
+              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                {certification.link ? (
+                  <a
+                    href={certification.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 transition hover:text-teal-500 dark:hover:text-teal-400"
+                  >
+                    {certification.title}
+                    <svg viewBox="0 0 12 12" className="h-3 w-3 shrink-0 text-zinc-400 dark:text-zinc-500" fill="none" aria-hidden="true">
+                      <path d="M3.5 3H2a1 1 0 0 0-1 1v5.5A1 1 0 0 0 2 10.5H7.5a1 1 0 0 0 1-1V8M7 1h4m0 0v4m0-4L5 7" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                ) : (
+                  certification.title
+                )}
+              </dd>
+              <dt className="sr-only">Credential ID</dt>
+              <dd className="w-full flex-none text-xs text-zinc-500 dark:text-zinc-400">
+                {certification.credentialId}
+              </dd>
+              {certification.date && (
+                <dd className="w-full flex-none text-xs text-zinc-400 dark:text-zinc-500">
+                  {certification.date}
+                </dd>
+              )}
+            </dl>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
 
-function Photos() {
-  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2'];
-  const [tappedImages, setTappedImages] = useState({});
+const nameVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.09 },
+  },
+};
 
-  const handleTap = (imageIndex) => {
-    setTappedImages((prevState) => ({
-      ...prevState,
-      [imageIndex]: !prevState[imageIndex],
-    }));
-  };
-}
+const firstNameVariant = {
+  hidden: { opacity: 0, x: -48 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const lastNameVariant = {
+  hidden: { opacity: 0, x: 48 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const taglineVariant = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut', delay: 0.45 },
+  },
+};
 
 export default function Home() {
   return (
     <>
-      <Container className="mt-9">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Engineer. Analyst. Designer.
-          </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hello! My name is Olivia Warner and I am a software & SASE engineer, data analyst, & designer based in Pittsburgh, Pennsylvania.
-          </p>
-          <div className="mt-6 flex gap-6">
+      <Container className="mt-12 sm:mt-20">
+        <div className="overflow-hidden">
+          <motion.h1
+            className="font-black leading-[0.85] tracking-tight select-none"
+            variants={nameVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span
+              className="block"
+              style={{
+                fontSize: 'clamp(3.75rem, 14vw, 10.5rem)',
+                WebkitTextStroke: '4px rgb(20 184 166)',
+                color: 'var(--text-outline-fill)',
+                paintOrder: 'stroke fill',
+              }}
+              variants={firstNameVariant}
+            >
+              OLIVIA
+            </motion.span>
+            <motion.span
+              className="block text-zinc-900 dark:text-zinc-50"
+              style={{ fontSize: 'clamp(3.75rem, 14vw, 10.5rem)' }}
+              variants={lastNameVariant}
+            >
+              WARNER
+            </motion.span>
+          </motion.h1>
+        </div>
+
+        <motion.div
+          className="mt-6 flex flex-col gap-4"
+          variants={taglineVariant}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <p className="text-sm uppercase tracking-[0.22em] text-zinc-500 dark:text-zinc-400">
+              Engineer&nbsp;&nbsp;·&nbsp;&nbsp;Analyst&nbsp;&nbsp;·&nbsp;&nbsp;Designer
+            </p>
+            <div className="hidden h-px flex-1 bg-zinc-200 dark:bg-zinc-700 sm:block" />
+            <span className="text-sm uppercase tracking-[0.22em] text-zinc-400 dark:text-zinc-500">
+              Pittsburgh, PA
+            </span>
+          </div>
+          <div className="flex gap-2">
             <SocialLink
               href="https://github.com/oliviawarner"
               aria-label="Follow on GitHub"
@@ -279,9 +335,10 @@ export default function Home() {
               icon={LinkedInIcon}
             />
           </div>
-        </div>
+        </motion.div>
       </Container>
-      <Container className="mt-16 md:mt-28">
+
+      <Container className="mt-20 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2 lg:gap-x-12">
           <div>
             <Resume />
@@ -291,7 +348,6 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Photos />
     </>
   );
 }

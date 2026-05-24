@@ -3,6 +3,14 @@
 @import './prism.css';
 @import 'tailwindcss/utilities';
 
+/* Background fill for outlined hero text — must match the content panel bg */
+:root {
+  --text-outline-fill: rgb(255 255 255);
+}
+.dark {
+  --text-outline-fill: rgb(24 24 27);
+}
+
 /* Custom styles for the project cards */
 .custom-card {
     @apply rounded-lg border border-gray-200 p-4 transition-all;
